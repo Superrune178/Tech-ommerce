@@ -129,7 +129,7 @@ export default function CartPage() {
             setPostalCode(response.data.postalCode);
             setStreetAddress(response.data.streetAddress);
             setCountry(response.data.country);
-        })
+        });
     }, [session]);
     function moreOfThisProduct(id) {
         addProduct(id);
@@ -216,12 +216,7 @@ export default function CartPage() {
                                         </tr>
                                         <tr className="subtotal">
                                             <td colSpan={2}>Shipping</td>
-                                            {shippingFee === '0' && (
-                                                <td>Free</td>
-                                            )}
-                                            {shippingFee > 0 && (
-                                                <td>${shippingFee}</td>
-                                            )}
+                                            <td>${shippingFee}</td>
                                         </tr>
                                         <tr className="subtotal total">
                                             <td colSpan={2}>Total</td>

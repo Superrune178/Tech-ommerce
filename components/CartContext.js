@@ -29,9 +29,6 @@ export function CartContextProvider({ children }) {
     }
     function clearCart() {
         setCartProducts([]);
-        if (ls) {
-            ls.removeItem('cart'); // Clear the cart in local storage
-        }
     }
     return (
         <CartContext.Provider value={{ cartProducts, setCartProducts, addProduct, removeProduct, clearCart }}>

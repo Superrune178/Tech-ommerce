@@ -94,124 +94,17 @@ const SideIcons = styled.div`
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
   const [mobileNavActive, setMobileNavActive] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
   return (
     <StyledHeader>
       <Center>
         <Wrapper>
-          <Logo href={'/'}><img src="/images/Logo.png" /></Logo>
+          <Logo href={'/'}>Ecommerce</Logo>
           <StyledNav mobileNavActive={mobileNavActive}>
-            {/* <DropdownMenu
-              title="Home"
-              url="/home"
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            /> */}
-            {/* <DropdownMenu
-              title="Products"
-              url="/"
-              submenu={[
-                { title: 'All Products', url: '/products' },
-                { title: 'Categories', url: '/categories' },
-                { title: 'Account', url: '/account' },
-              ]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            /> */}
-            {/* <DropdownMenu
-              title="Services"
-              url="/services"
-              submenu={[
-                {
-                  title: 'Endoscope Repairs & Service',
-                  url: '/'
-                },
-                {
-                  title: 'Ultrasound Probe Repairs',
-                  url: '/'
-                },
-                {
-                  title: 'Extended Warranty',
-                  url: '/'
-                },
-                {
-                  title: 'Loaner Program',
-                  url: '/'
-                },
-                {
-                  title: 'Repair As You Go (RAG)',
-                  url: '/'
-                },
-                {
-                  title: 'Training Program',
-                  url: '/'
-                },
-              ]}
-
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            /> */}
-
-            <DropdownMenu
-              title="Products"
-              url="/"
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-
-            <DropdownMenu
-              title="All Products"
-              url="/products"
-              cartProducts={cartProducts}
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-
-            <DropdownMenu
-              title="Categories"
-              url="/categories"
-              cartProducts={cartProducts}
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-
-            <DropdownMenu
-              title="Account"
-              url="/account"
-              cartProducts={cartProducts}
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-
-            <DropdownMenu
-              title="Cart"
-              url="/cart"
-              cartProducts={cartProducts}
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-
-
-            {/* <DropdownMenu
-              title="About Us"
-              url="/about"
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
-            <DropdownMenu
-              title="Contact Us"
-              url="/contact"
-              submenu={[]}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            /> */}
+            <NavLink href={'/'}>Home</NavLink>
+            <NavLink href={'/products'}>All products</NavLink>
+            <NavLink href={'/categories'}>Categories</NavLink>
+            <NavLink href={'/account'}>Account</NavLink>
+            <NavLink href={'/cart'}>Cart ({cartProducts.length})</NavLink>
           </StyledNav>
           <SideIcons>
             <Link href={'/search'}><SearchIcon /></Link>
